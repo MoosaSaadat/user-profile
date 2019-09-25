@@ -11,6 +11,9 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #green-header {
@@ -20,4 +23,12 @@ body {
 	height: 20vh;
 	width: 100vw;
 	background-color: #21e7b6;
+	z-index: -1;
+}
+
+.profile-wrapper {
+	background-color: #3b3c50;
+	height: 80%;
+	width: 90%;
+	box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.75);
 }
