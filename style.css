@@ -1,0 +1,23 @@
+/*
+BLACK - 3B3C50
+GREEN - 21E7B6
+DGREN - 1FD6AA
+GREY  - 7E8288
+*/
+
+body {
+	height: 100vh;
+	background-color: #3b3c50;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+#green-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20vh;
+	width: 100vw;
+	background-color: #21e7b6;
+}
