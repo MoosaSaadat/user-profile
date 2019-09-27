@@ -5,6 +5,8 @@ DGREN - 1FD6AA
 GREY  - 7E8288
 */
 
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap');
+
 body {
 	height: 100vh;
 	background-color: #3b3c50;
@@ -14,6 +16,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: 'Be Vietnam', sans-serif;
 }
 
 #green-header {
@@ -35,9 +38,11 @@ body {
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
+	justify-content: flex-start;
 }
 
 .profile-image {
+	position: relative;
 	display: flex;
 	width: 80%;
 	transform: translateY(-25%);
@@ -47,4 +52,52 @@ body {
 
 .profile-image img {
 	width: 100%;
+}
+
+.profile-status {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	color: #21e7b6;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 10px;
+}
+
+.profile-status::after {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #21e7b6;
+	margin-bottom: -2px;
+	margin-left: 5px;
+}
+
+.profile-username {
+	color: white;
+	font-size: 24px;
+}
+
+.profile-stats {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.profile-stat {
+	border-left: 2px solid #7e8288;
+	padding-left: 5px;
+}
+
+.profile-stat-title {
+	color: white;
+	font-size: 12px;
+}
+
+.profile-stat-value {
+	color: #21e7b6;
+	font-size: 24px;
 }
