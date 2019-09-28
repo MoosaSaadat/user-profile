@@ -220,16 +220,16 @@ body {
 		transform: translate3d(-50px, -50px, 0) rotate(45deg);
 	}
 	100% {
-		transform: rotate(45deg) translate3d(400px, -50px, 0);
+		transform: rotate(45deg) translate3d(4000px, -50px, 0);
 	}
 }
 
 @keyframes goUpOverlay {
 	0% {
-		transform: translate3d(-50px, -50px, 0) rotate(45deg);
+		transform: translate3d(-50px, -50px, 0) rotate(-135deg);
 	}
 	100% {
-		transform: rotate(45deg) translate3d(-400px, -50px, 0);
+		transform: rotate(-135deg) translate3d(4000px, -50px, 0);
 	}
 }
 
