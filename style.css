@@ -7,6 +7,8 @@ GREY  - 7E8288
 
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
 body {
 	height: 100vh;
 	background-color: #3b3c50;
@@ -38,16 +40,17 @@ body {
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 .profile-image {
 	position: relative;
 	display: flex;
 	width: 70vw;
+	max-width: 200px;
 	margin-top: -5vh;
 	box-sizing: border-box;
-	border-bottom: 2px solid #7e8288;
+	border-bottom: 1px solid #7e8288;
 	box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.75);
 }
 
@@ -70,6 +73,7 @@ body {
 	right: 1rem;
 	color: #21e7b6;
 	text-transform: uppercase;
+	font-weight: bold;
 	letter-spacing: 1px;
 	font-size: 10px;
 }
@@ -86,9 +90,16 @@ body {
 }
 
 .profile-username {
+	font-family: 'Permanent Marker', cursive;
 	color: white;
-	font-size: 24px;
+	font-size: 36px;
 	letter-spacing: 5px;
+	margin-top: 1rem;
+	text-align: center;
+}
+
+#break-username {
+	display: none;
 }
 
 .profile-intro {
@@ -112,6 +123,7 @@ body {
 	color: #7e8288;
 	line-height: normal;
 	text-align: justify;
+	max-width: 300px;
 }
 
 .profile-stats {
@@ -126,8 +138,8 @@ body {
 }
 
 .profile-stat:nth-child(2) {
-	padding: 0 1.5rem;
-	margin: 0 1.5rem;
+	padding: 0 5%;
+	margin: 0 5%;
 	border-left: 1px solid #7e8288;
 	border-right: 1px solid #7e8288;
 }
@@ -151,9 +163,34 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px -2px 5px -3px rgba(0, 0, 0, 0.75);
+	background-color: #343546;
 }
 
-.profile-accounts i {
+.profile-account-link {
+	text-decoration: none;
 	color: #7e8288;
+	cursor: pointer;
+}
+
+.profile-account-link:hover {
+	color: #21e7b6;
+}
+
+@media screen and (min-width: 500px) {
+	.profile-wrapper {
+		width: 70vw;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.profile-wrapper {
+		width: 50vw;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.profile-wrapper {
+		width: 30vw;
+	}
 }

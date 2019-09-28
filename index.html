@@ -16,9 +16,7 @@
       <div class="temp-overlay"></div>
       <span class="profile-status">online</span>
     </div>
-    <div class="profile-username">
-      <span class="profile-username-first">JULIA</span> <span class="profile-username-second">SMITH</span>
-    </div>
+    <div class="profile-username"> </div>
     <div class="profile-intro">
       <span class="profile-intro-designation">Graphic Designer</span>
       <div class="profile-intro-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500's, when an unknown printer took a galley of type.</div>
@@ -41,11 +39,26 @@
       </div>
     </div>
     <div class="profile-accounts">
-      <i class="fab fa-instagram fa-lg"></i>
-      <i class="fab fa-twitter fa-lg"></i>
-      <i class="fab fa-behance fa-lg"></i>
-      <i class="fab fa-dribbble fa-lg"></i>
+      <a href="#" class="profile-account-link"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" class="profile-account-link"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" class="profile-account-link"><i class="fab fa-behance fa-lg"></i></a>
+      <a href="#" class="profile-account-link"><i class="fab fa-dribbble fa-lg"></i></a>
     </div>
   </div>
+  <script>
+    var i = 0;
+    var txt = 'Julia Smith';
+    var speed = 50;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.querySelector(".profile-username").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    document.querySelector(".profile-username").innerHTML = "";
+    // window.addEventListener("load", typeWriter);
+  </script>
 </body>
 </html>
