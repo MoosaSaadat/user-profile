@@ -52,6 +52,7 @@ body {
 	box-sizing: border-box;
 	border-bottom: 1px solid #7e8288;
 	box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.75);
+	overflow: hidden;
 }
 
 .profile-image img {
@@ -60,11 +61,18 @@ body {
 
 .temp-overlay {
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	background-color: #202020;
+	width: 300px;
+	height: 300px;
+}
+
+.temp-overlay.one {
+	background-color: #343546;
+	animation: goUpOverlay 2s ease-in-out 1s both;
+}
+
+.temp-overlay.two {
+	background-color: #21e7b6;
+	animation: goDownOverlay 2s ease-in-out 1s both;
 }
 
 .profile-status {
@@ -92,7 +100,7 @@ body {
 .profile-username {
 	font-family: 'Permanent Marker', cursive;
 	color: white;
-	font-size: 36px;
+	font-size: 24px;
 	letter-spacing: 5px;
 	margin-top: 1rem;
 	text-align: center;
@@ -181,6 +189,9 @@ body {
 	.profile-wrapper {
 		width: 70vw;
 	}
+	.profile-username {
+		font-size: 36px;
+	}
 }
 
 @media screen and (min-width: 600px) {
@@ -192,5 +203,44 @@ body {
 @media screen and (min-width: 1200px) {
 	.profile-wrapper {
 		width: 30vw;
+	}
+}
+
+@keyframes fillInText {
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes goDownOverlay {
+	0% {
+		transform: translate3d(-50px, -50px, 0) rotate(45deg);
+	}
+	100% {
+		transform: rotate(45deg) translate3d(400px, -50px, 0);
+	}
+}
+
+@keyframes goUpOverlay {
+	0% {
+		transform: translate3d(-50px, -50px, 0) rotate(45deg);
+	}
+	100% {
+		transform: rotate(45deg) translate3d(-400px, -50px, 0);
+	}
+}
+
+@keyframes popUp {
+	0% {
+		transform: scale(0);
+	}
+	70% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

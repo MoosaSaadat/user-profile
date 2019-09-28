@@ -13,10 +13,14 @@
   <div class="profile-wrapper">
     <div class="profile-image">
       <img src="ProfilePicture11.jpg" alt="Julia Smith Picture">
-      <div class="temp-overlay"></div>
       <span class="profile-status">online</span>
+      <div class="temp-overlay one"></div>
+      <div class="temp-overlay two"></div>
     </div>
-    <div class="profile-username"> </div>
+    <div class="profile-username">
+      <span id="profile-username-first">J</span>
+      <span id="profile-username-second">S</span>
+    </div>
     <div class="profile-intro">
       <span class="profile-intro-designation">Graphic Designer</span>
       <div class="profile-intro-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500's, when an unknown printer took a galley of type.</div>
@@ -47,18 +51,40 @@
   </div>
   <script>
     var i = 0;
-    var txt = 'Julia Smith';
-    var speed = 50;
+    var j = 0;
 
+    var firstName = "ulia";
+    var secondName = "mith";
+
+    var myTimeout;
     function typeWriter() {
-      if (i < txt.length) {
-        document.querySelector(".profile-username").innerHTML += txt.charAt(i);
+      if (i < firstName.length) {
+        document.getElementById("profile-username-first").innerHTML += firstName.charAt(i);
         i++;
-        setTimeout(typeWriter, speed);
+      }
+      if (j < secondName.length) {
+        document.getElementById("profile-username-second").innerHTML += secondName.charAt(j);
+        j++;
+      }
+      myTimeout = setTimeout(typeWriter, 50);
+      if (!(i < firstName.length || j < secondName.length))
+        clearTimeout(myTimeout);
+    }
+
+    function callWriter() {
+      setTimeout(typeWriter, 500);
+    }
+
+    function addAnimToLinks () {
+      let accountLinks = document.querySelector(".profile-accounts").children;
+      console.log(accountLinks);
+      for (let i = 0; i < accountLinks.length; i++) {
+        accountLinks[i].style.animation = `popUp 1s ease-in-out ${i * 0.2 + 1.5}s both`;
       }
     }
-    document.querySelector(".profile-username").innerHTML = "";
-    // window.addEventListener("load", typeWriter);
+
+    window.addEventListener("load", callWriter);
+    window.addEventListener("load", addAnimToLinks);
   </script>
 </body>
 </html>
